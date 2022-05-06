@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "KTM DUKE 125",
+        "img": "https://images.news18.com/ibnlive/uploads/2019/06/KTM-RC-1251.jpg?im=FitAndFill,width=1200,height=1200",
+        "description": "It has one of the best looks among naked segment bikes.",
+        "price": "470000",
+        "quantity": "3",
+        "supplierName": "Mark"
+    },
+    {
+        "_id": 2,
+        "name": "RTR 200 4V",
+        "img": "https://i.ndtvimg.com/i/2018-02/tvs-apache-rtr-200-abs_827x510_81517571077.jpg",
+        "description": "",
+        "price": "42000",
+        "quantity": "1",
+        "supplierName": "Jack"
+    },
+    {
+        "_id": 3,
+        "name": "PULSAR NS200",
+        "img": "https://www.motorbeam.com/wp-content/uploads/Bajaj-Pulsar-F250.jpg",
+        "description": "",
+        "price": "190000",
+        "quantity": "6",
+        "supplierName": "David"
+    },
+    {
+        "_id": 4,
+        "name": "ROYAL ENFIELD",
+        "img": "https://www.royalenfield.com/content/dam/royal-enfield/classic-350/colors/studio-shots/dual-channel/dark-stealth-black/new/01-dark-stealth-black.jpg",
+        "description": "",
+        "price": "350000",
+        "quantity": "2",
+        "supplierName": "Miller"
+    },
+    {
+        "_id": 5,
+        "name": "YAMAHA FZ",
+        "img": "https://images.91wheels.com//assets/b_images/gallery/yamaha/fzs-fi-bs6/yamaha-fzs-fi-bs6-0-1618206620.png?width=300&height=200",
+        "description": "",
+        "price": "290000",
+        "quantity": "10",
+        "supplierName": "Jones"
+    },
+    {
+        "_id": 6,
+        "name": "DISCOVER 125",
+        "img": "https://imgd.aeplcdn.com/0x0/bw/models/bajaj-discover-125-drum--cbs20190722121006.jpg",
+        "description": "",
+        "price": "190000",
+        "quantity": "8",
+        "supplierName": "Smith"
+    }
+]

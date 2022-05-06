@@ -1,0 +1,10 @@
+.item-info {
+    border: 1px solid black;
+    text-align: center;
+    /* width: 350px; */
+}
+
+.item-info img {
+    width: 300px;
+    height: 300px;
+}
