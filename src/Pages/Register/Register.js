@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const Register = () => {
     const [agree, setAgree] = useState(false)
@@ -12,7 +13,8 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating] = useUpdateProfile(auth);
 
 
     const navigate = useNavigate()
@@ -22,19 +24,21 @@ const Register = () => {
     }
 
     if (user) {
-        navigate("/home")
+
     }
 
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault()
         const name = event.target.formBasicName.value
         const email = event.target.formBasicEmail.value
         const password = event.target.formBasicPassword.value
-        if (agree) {
-            createUserWithEmailAndPassword(email, password)
-        }
 
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName: name });
+        console.log('Updated profile');
+        navigate("/home")
+
+        // createUserWithEmailAndPassword(email, password)
     }
     return (
         <div className='w-50 mx-auto' >
