@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import Loading from '../Shared/Loading/Loading';
 
 const Register = () => {
     const [agree, setAgree] = useState(false)
@@ -23,7 +24,8 @@ const Register = () => {
         navigate("/login")
     }
 
-    if (user) {
+    if (loading || updating) {
+        <Loading></Loading>
 
     }
 
