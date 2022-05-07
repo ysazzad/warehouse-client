@@ -24,7 +24,7 @@ const ItemDetails = () => {
                 <p>Sold: {item.sold} </p>
                 <p>Supplier Name: {item.supplierName} </p>
                 <p><small>Description: {item.description}</small></p>
-                <button>Delivered</button>
+                <button >Delivered</button>
 
             </div>
         </div>

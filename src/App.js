@@ -8,6 +8,7 @@ import ItemDetails from './Pages/ItemDetails/ItemDetails';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
             <ItemDetails></ItemDetails>
           </RequireAuth>
         }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+
       <Footer></Footer>
 
     </div>
