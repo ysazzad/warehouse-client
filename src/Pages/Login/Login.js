@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -19,6 +19,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
     const handleSubmit = event => {
         event.preventDefault()
 
@@ -29,10 +31,18 @@ const Login = () => {
     }
     if (user) {
         navigate(from, { replace: true })
-
+    }
+    let errorText;
+    if (error) {
+        errorText = <p className='text-danger'>Error: {error?.message}</p>
     }
     const navigateRegister = () => {
         navigate("/register")
+    }
+    const resetPassword = async () => {
+        const email = emailRef.current.value
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
 
 
     }
@@ -54,10 +64,12 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Login
                 </Button>
             </Form>
+            {errorText}
             <p>New to Bikewala ? <Link to="/register" className="pe-auto text-decoration-none" onClick={navigateRegister}>Please Register</Link></p>
+            <p>Forget Password ? <button className=" btn btn-link pe-auto text-decoration-none" onClick={resetPassword}>Reset Your Password</button></p>
             <SocialLogin></SocialLogin>
         </div>
     );

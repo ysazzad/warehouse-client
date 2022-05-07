@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -6,6 +6,7 @@ import auth from '../../firebase.init'
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
+    const [agree, setAgree] = useState(false)
     const [
         createUserWithEmailAndPassword,
         user,
@@ -29,6 +30,9 @@ const Register = () => {
         const name = event.target.formBasicName.value
         const email = event.target.formBasicEmail.value
         const password = event.target.formBasicPassword.value
+        if (agree) {
+            createUserWithEmailAndPassword(email, password)
+        }
 
         createUserWithEmailAndPassword(email, password)
     }
@@ -52,10 +56,10 @@ const Register = () => {
                     <Form.Control type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="Accept term and conditions" className={agree ? 'text-dark' : 'text-danger'} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button variant="primary" type="submit" disabled={!agree}>
+                    Register
                 </Button>
             </Form>
             <p>Already have an account ? <Link to="/login" className="pe-auto text-decoration-none" onClick={navigateLogin}>Please Login</Link></p>
