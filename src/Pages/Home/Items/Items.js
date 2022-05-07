@@ -12,7 +12,7 @@ const Items = () => {
     return (
         <div>
             <h2>Items </h2>
-            <div className="container">
+            <div className="container" id='items'>
                 {
                     items.map(item => <Item key={item._id} item={item}></Item>)
                 }
