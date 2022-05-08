@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Items from '../Items/Items';
 
 const Home = () => {
@@ -6,6 +7,8 @@ const Home = () => {
         <div>
 
             <Items></Items>
+            <Link to="/manage"><button>Manage Inventories</button></Link>
+
         </div>
     );
 };

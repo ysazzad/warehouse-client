@@ -5,6 +5,7 @@ import './ItemDetails.css'
 const ItemDetails = () => {
     const { itemId } = useParams()
     const [item, setItem] = useState({})
+    const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
         const url = `http://localhost:5000/items/${itemId}`
@@ -12,6 +13,12 @@ const ItemDetails = () => {
             .then(res => res.json())
             .then(data => setItem(data))
     }, [])
+    const deliveredBtn = () => {
+        console.log(item.quantity);
+        const newQuantity = (item.quantity) - 1
+        setQuantity(newQuantity)
+        console.log(quantity);
+    }
     return (
         <div>
             <h1>Details</h1>
@@ -24,7 +31,9 @@ const ItemDetails = () => {
                 <p>Sold: {item.sold} </p>
                 <p>Supplier Name: {item.supplierName} </p>
                 <p><small>Description: {item.description}</small></p>
-                <button >Delivered</button>
+                <button onClick={deliveredBtn}>Delivered</button> <br /> <br />
+                <label htmlFor="">Restock </label>
+                <input type="number" name="" id="" />
 
             </div>
         </div>
