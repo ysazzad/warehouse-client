@@ -17,7 +17,7 @@ const Item = ({ item }) => {
             <p>Quantity : {quantity}</p>
             <p>Supplier Name: {supplierName}</p>
             <p> <small> {description}</small></p>
-            <button onClick={() => handleItemDetails(_id)}>Update</button>
+            <button style={{ color: "orange" }} className="btn bg-dark" onClick={() => handleItemDetails(_id)}>Update</button>
 
         </div>
     );

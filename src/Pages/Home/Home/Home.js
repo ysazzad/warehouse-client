@@ -7,7 +7,9 @@ const Home = () => {
         <div>
 
             <Items></Items>
-            <Link to="/manage"><button>Manage Inventories</button></Link>
+            <div className='text-center m-4'>
+                <Link to="/manage"><button style={{ background: "#C4E538" }} className="btn ">Manage Inventories</button></Link>
+            </div>
 
         </div>
     );

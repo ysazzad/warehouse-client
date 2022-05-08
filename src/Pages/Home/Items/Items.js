@@ -11,7 +11,7 @@ const Items = () => {
     }, [])
     return (
         <div>
-            <h2>Items </h2>
+            <h2 style={{ color: "orange" }} className="text-center m-3"> Inventory Items </h2>
             <div className="container" id='items'>
                 {
                     items.map(item => <Item key={item._id} item={item}></Item>)

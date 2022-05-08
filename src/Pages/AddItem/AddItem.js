@@ -20,7 +20,7 @@ const AddItem = () => {
     };
     return (
         <div className='w-50 mx-auto'>
-            <h2>Add New Inventory Item</h2>
+            <h2 className='text-center mt-3 mb-3 ' style={{ color: 'orange' }}>Add New Inventory Item</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <input className='mb-2' placeholder='Description'{...register("description")} />
@@ -29,7 +29,7 @@ const AddItem = () => {
                 <input className='mb-2' placeholder='Sold' type="number" {...register("sold")} />
                 <input className='mb-2' placeholder='Photo Url' type="text" {...register("img")} />
                 <input className='mb-2' placeholder=' Supplier Name' type="text" {...register("supplierName")} />
-                <input type="submit" />
+                <input type="submit" value="ADD ITEM" style={{ color: 'orange' }} className="bg-dark p-2" />
             </form>
         </div>
     );
