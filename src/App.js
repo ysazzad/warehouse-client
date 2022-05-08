@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import NotFound from './Pages/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/item/:itemId' element={
           <RequireAuth>
