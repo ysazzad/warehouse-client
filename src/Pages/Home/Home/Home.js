@@ -10,7 +10,7 @@ const Home = () => {
 
             <Items></Items>
             <div className='text-center m-4'>
-                <Link to="/manage"><button style={{ background: "#C4E538" }} className="btn ">Manage Inventories</button></Link>
+                <Link to="/manage"><button style={{ background: "#EE5A24" }} className="btn ">Manage Inventories</button></Link>
             </div>
 
         </div>
