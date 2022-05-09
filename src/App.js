@@ -12,6 +12,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddItem from './Pages/AddItem/AddItem';
+import MyItems from './Pages/MyItems/MyItems';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <ItemDetails></ItemDetails>
           </RequireAuth>
         }></Route>
+        <Route path='myItems' element={<MyItems></MyItems>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
 

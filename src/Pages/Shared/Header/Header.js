@@ -29,6 +29,13 @@ const Header = () => {
                     <Nav>
                         <Nav.Link as={Link} to="/blogs" style={{ color: "#C4E538" }}>Blogs</Nav.Link>
                         {
+                            user && <>
+                                <Nav.Link as={Link} to="/myItems" style={{ color: "#C4E538" }}>My Items</Nav.Link>
+                                <Nav.Link as={Link} to="/add" style={{ color: "#C4E538" }}>Add Items</Nav.Link>
+
+                            </>
+                        }
+                        {
                             user ? <button style={{ color: "#C4E538" }} className='btn btn-link text-decoration-none ' onClick={handleLogout} >Log out</button>
 
                                 :
