@@ -7,7 +7,7 @@ const MyItems = () => {
         // console.log(id);
         const proceed = window.confirm("are you sure want to delete?")
         if (proceed) {
-            const url = `http://localhost:5000/items/${id}`
+            const url = `https://quiet-island-26843.herokuapp.com/items/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"
@@ -29,7 +29,7 @@ const MyItems = () => {
                     items.map(item => <div key={item._id} className="">
                         <img style={{ width: "100px" }} src={item.img} alt="" />
                         <h4>{item.name}</h4>
-                        {/* <p>{item.supplierName}</p> */}
+
                         <button className='btn btn-danger' onClick={() => handleDelete(item._id)}>Delete</button>
 
                     </div>)

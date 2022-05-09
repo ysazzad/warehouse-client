@@ -1,6 +1,8 @@
 .details {
     display: flex;
     justify-content: space-around;
+    border: none;
+    border-width: 0;
 }
 
 img {

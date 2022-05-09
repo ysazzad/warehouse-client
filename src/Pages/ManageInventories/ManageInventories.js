@@ -10,7 +10,7 @@ const ManageInventories = () => {
     // console.log(items);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/items`)
+    //     fetch(`https://quiet-island-26843.herokuapp.com/items`)
     //         .then(res => res.json())
     //         .then(data => setItems(data))
     // }, [])
@@ -19,7 +19,7 @@ const ManageInventories = () => {
         // console.log(id);
         const proceed = window.confirm("are you sure want to delete?")
         if (proceed) {
-            const url = `http://localhost:5000/items/${id}`
+            const url = `https://quiet-island-26843.herokuapp.com/items/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"

@@ -72,15 +72,13 @@ const Login = () => {
 
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
             {errorText}
-            <p>New to Bikewala ? <Link to="/register" className="pe-auto text-decoration-none" onClick={navigateRegister}>Please Register</Link></p>
+            <p>New to bikeBD ? <Link to="/register" className="pe-auto text-decoration-none" onClick={navigateRegister}>Please Register</Link></p>
             <p>Forget Password ? <button className=" btn btn-link pe-auto text-decoration-none" onClick={resetPassword}>Reset Your Password</button></p>
             <SocialLogin></SocialLogin>
             <ToastContainer></ToastContainer>

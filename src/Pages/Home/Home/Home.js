@@ -2,12 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AboutUs from '../../AboutUs/AboutUs';
 import Clients from '../../Clients/Clients';
+import Loading from '../../Shared/Loading/Loading';
 import Banner from '../Banner/Banner';
 import Items from '../Items/Items';
 
 const Home = () => {
+
     return (
+
         <div>
+
+
             <Banner></Banner>
 
             <Items></Items>

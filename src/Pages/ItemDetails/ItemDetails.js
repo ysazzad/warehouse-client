@@ -9,7 +9,7 @@ const ItemDetails = () => {
     const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
-        const url = `http://localhost:5000/items/${itemId}`
+        const url = `https://quiet-island-26843.herokuapp.com/items/${itemId}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -24,7 +24,7 @@ const ItemDetails = () => {
         setQuantity(newQuantity)
         console.log(newQuantity);
         // send data to the server
-        const url = `http://localhost:5000/items/${itemId}`;
+        const url = `https://quiet-island-26843.herokuapp.com/items/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,12 +41,12 @@ const ItemDetails = () => {
     }
 
     const restockInput = () => {
-        console.log(item.quantity);
+
         const newQuantity = parseInt(quantity) + 1
         setQuantity(newQuantity)
-        console.log(newQuantity);
+
         // send data to the server
-        const url = `http://localhost:5000/items/${itemId}`;
+        const url = `https://quiet-island-26843.herokuapp.com/items/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -57,6 +57,7 @@ const ItemDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
+                alert("please check the quantity")
 
 
             })

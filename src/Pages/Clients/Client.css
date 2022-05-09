@@ -11,3 +11,11 @@
     border: 1px solid gray;
 
 }
+
+/* responsive for mobile  */
+@media only screen and (max-width: 576px) {
+    .client {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

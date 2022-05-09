@@ -3,9 +3,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-left: 150px;
-
 }
 
-.details {
-    border: 1px solid black;
+
+
+/* responsive for mobile  */
+@media only screen and (max-width: 576px) {
+    .manage-details {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

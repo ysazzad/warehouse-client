@@ -15,7 +15,7 @@ const Clients = () => {
                     <p className='mt-2'>  Your Bike may ride You But, My Ktm Rides my Soul!</p>
                 </div>
                 <div>
-                    <img className='client-pic' src="https://i.dlpng.com/static/png/6761749_preview.png" alt="" />
+                    <img className='client-pic' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD0cQWEQVcFyru75Hzasb-AgbkEwtgETSmMSXp1BMUs0GTRi2LHZB-mtNUqivyTNa0TBM&usqp=CAU" alt="" />
                     <p className='mt-2'> If you don't ride in the rain, you don't ride</p>
                 </div>
             </div>
