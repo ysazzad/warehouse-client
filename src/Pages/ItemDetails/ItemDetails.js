@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import './ItemDetails.css'
@@ -5,20 +6,23 @@ import './ItemDetails.css'
 const ItemDetails = () => {
     const { itemId } = useParams()
     const [item, setItem] = useState({})
-    const [quantity, setQuantity] = useState()
+    const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
         const url = `http://localhost:5000/items/${itemId}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setItem(data))
+            .then(data => {
+                setItem(data)
+                setQuantity(data.quantity)
+            })
     }, [])
 
     const deliveredBtn = () => {
         console.log(item.quantity);
-        const newQuantity = (item.quantity) - 1
+        const newQuantity = (quantity) - 1
         setQuantity(newQuantity)
-        console.log(quantity);
+        console.log(newQuantity);
         // send data to the server
         const url = `http://localhost:5000/items/${itemId}`;
         fetch(url, {
@@ -26,14 +30,37 @@ const ItemDetails = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(quantity)
+            body: JSON.stringify({ quantity: newQuantity })
         })
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
-                alert('users added successfully!!!');
-                //  event.target.reset();
+
+
             })
+    }
+
+    const restockInput = () => {
+        console.log(item.quantity);
+        const newQuantity = parseInt(quantity) + 1
+        setQuantity(newQuantity)
+        console.log(newQuantity);
+        // send data to the server
+        const url = `http://localhost:5000/items/${itemId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ quantity: newQuantity })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+
+
+            })
+
     }
 
 
@@ -48,13 +75,13 @@ const ItemDetails = () => {
                     <h4>Name: {item.name} </h4>
                     <p>Id: {item._id} </p>
                     <p>Price: {item.price} </p>
-                    <p>Quantity: {item.quantity} </p>
+                    <p>Quantity: {quantity} </p>
                     <p>Sold: {item.sold} </p>
                     <p>Supplier Name: {item.supplierName} </p>
                     <p><small>Description: {item.description}</small></p>
                     <button style={{ color: "orange" }} className='btn bg-dark' onClick={deliveredBtn}>Delivered</button> <br /> <br />
                     <label htmlFor="" style={{ color: "orange" }} className="p-2">Restock </label>
-                    <input type="number" name="" id="" />
+                    <input type="number" name="" id="" onClick={restockInput} />
 
                 </div>
             </div>

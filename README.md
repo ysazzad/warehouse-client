@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+https://stackoverflow.com/questions/72154420/uncaught-firebase-firebase-error-auth-invalid-api-key/72167604#72167604
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
