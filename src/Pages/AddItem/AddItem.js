@@ -5,7 +5,7 @@ const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `https://quiet-island-26843.herokuapp.com/items`;
+        const url = `https://warehouse-server-zlaq.onrender.com/items`;
         fetch(url, {
             method: 'POST',
             headers: {

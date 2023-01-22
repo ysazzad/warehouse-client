@@ -9,7 +9,7 @@ const ItemDetails = () => {
     const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
-        const url = `https://quiet-island-26843.herokuapp.com/items/${itemId}`
+        const url = `https://warehouse-server-zlaq.onrender.com/items/${itemId}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -24,7 +24,7 @@ const ItemDetails = () => {
         setQuantity(newQuantity)
         console.log(newQuantity);
         // send data to the server
-        const url = `https://quiet-island-26843.herokuapp.com/items/${itemId}`;
+        const url = `https://warehouse-server-zlaq.onrender.com/items/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -46,7 +46,7 @@ const ItemDetails = () => {
         setQuantity(newQuantity)
 
         // send data to the server
-        const url = `https://quiet-island-26843.herokuapp.com/items/${itemId}`;
+        const url = `https://warehouse-server-zlaq.onrender.com/items/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

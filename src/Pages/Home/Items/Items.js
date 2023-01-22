@@ -7,7 +7,7 @@ const Items = () => {
 
     useEffect(() => {
 
-        fetch(`https://quiet-island-26843.herokuapp.com/items`)
+        fetch(`https://warehouse-server-zlaq.onrender.com/items`)
             .then(res => res.json())
             .then(data => setItems(data))
 

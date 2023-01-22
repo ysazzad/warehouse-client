@@ -7,7 +7,7 @@ const MyItems = () => {
         // console.log(id);
         const proceed = window.confirm("are you sure want to delete?")
         if (proceed) {
-            const url = `https://quiet-island-26843.herokuapp.com/items/${id}`
+            const url = `https://warehouse-server-zlaq.onrender.com/items/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"
